@@ -1,0 +1,11 @@
+# EditalAI - Extrator e Analisador de Editais
+
+O **EditalAI** é uma aplicação web desenvolvida para auxiliar estudantes, candidatos e empresas na leitura, interpretação e extração técnica de requisitos contidos em editais e licitações públicas, utilizando modelos de linguagem (LLM) e busca semântica (RAG).
+
+
+##  Como Executar o Projeto 
+
+1. Clone o repositório:
+```bash
+git clone 
+cd edital-ai
