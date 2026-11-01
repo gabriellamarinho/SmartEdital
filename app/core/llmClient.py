@@ -1,30 +1,77 @@
-from langchain_community.llms import Ollama
+import re
+from typing import Dict, Iterator, List
+
+from openai import OpenAI
+
 from app.core.config import settings
-from app.prompts.system_prompts import SYSTEM_RAG_PROMPT, CHECKLIST_PROMPT
+
+Message = Dict[str, str]
+
+_THINK_RE = re.compile(r"<think>.*?</think>", flags=re.DOTALL)
+
+
+class LLMError(RuntimeError):
+#error
 
 class LLMClient:
     def __init__(self):
-        if settings.LLM_PROVIDER == "ollama":
-            self.llm = Ollama(
-                base_url=settings.OLLAMA_BASE_URL,
-                model=settings.OLLAMA_MODEL,
-                temperature=0.1
-            )
+        provider = settings.LLM_PROVIDER
+        self.provider = provider
+        self.extra_body = None
+
+        if provider == "nvidia":
+            if not settings.NVIDIA_API_KEY:
+                raise LLMError("NVIDIA_API_KEY não definida. Copie .env.example para .env e preencha a chave.")
+            base_url, api_key, self.model = settings.NVIDIA_BASE_URL, settings.NVIDIA_API_KEY, settings.NVIDIA_MODEL
+            self.extra_body = {"chat_template_kwargs": {"enable_thinking": settings.LLM_ENABLE_THINKING}}
+        elif provider == "huggingface":
+            if not settings.HF_TOKEN:
+                raise LLMError("HF_TOKEN não definido no .env.")
+            base_url, api_key, self.model = settings.HF_BASE_URL, settings.HF_TOKEN, settings.HF_MODEL
+        elif provider == "ollama":
+            base_url = settings.OLLAMA_BASE_URL.rstrip("/") + "/v1"
+            api_key, self.model = "ollama", settings.OLLAMA_MODEL
         else:
-            # Caso queira expandir para NVIDIA NIM ou Hugging Face API futuramente
-            raise NotImplementedError(f"Provedor {settings.LLM_PROVIDER} ainda não configurado.")
+            raise LLMError(f"LLM_PROVIDER inválido: '{provider}'. Use nvidia, huggingface ou ollama.")
 
-    def generate_response(self, question: str, context_docs: list) -> str:
-        """Gera resposta via RAG utilizando o contexto extraído."""
-        context_text = "\n\n".join(
-            [f"[Página {doc.metadata.get('page', 0) + 1}]: {doc.page_content}" for doc in context_docs]
+        self.client = OpenAI(base_url=base_url, api_key=api_key, timeout=settings.LLM_TIMEOUT)
+
+    def _kwargs(self, messages: List[Message], temperature: float, max_tokens: int, stream: bool) -> dict:
+        kw = dict(
+            model=self.model,
+            messages=messages,
+            temperature=temperature,
+            max_tokens=max_tokens,
+            stream=stream,
         )
-        
-        prompt = SYSTEM_RAG_PROMPT.format(context=context_text, question=question)
-        return self.llm.invoke(prompt)
+        if self.extra_body:
+            kw["extra_body"] = self.extra_body
+        return kw
 
-    def generate_checklist(self, context_docs: list) -> str:
-        """Gera um checklist automático com base no contexto completo extraído."""
-        context_text = "\n\n".join([doc.page_content for doc in context_docs[:10]])  # Primeiros trechos chave
-        prompt = CHECKLIST_PROMPT.format(context=context_text)
-        return self.llm.invoke(prompt)
+    @staticmethod
+    def _clean(text: str) -> str:
+        return _THINK_RE.sub("", text or "").strip()
+
+    def complete(self, messages: List[Message], temperature: float = 0.1, max_tokens: int = 4096) -> str:
+        """Resposta completa (usada na extração estruturada)."""
+        try:
+            resp = self.client.chat.completions.create(**self._kwargs(messages, temperature, max_tokens, False))
+        except Exception as e:  # rede, chave inválida, rate limit
+            raise LLMError(f"Falha ao chamar o LLM ({self.provider}/{self.model}): {e}") from e
+        return self._clean(resp.choices[0].message.content)
+
+    def stream(self, messages: List[Message], temperature: float = 0.1, max_tokens: int = 2048) -> Iterator[str]:
+        """Streaming token a token (usado no chat). Ignora o 'reasoning_content'."""
+        try:
+            stream = self.client.chat.completions.create(**self._kwargs(messages, temperature, max_tokens, True))
+            for chunk in stream:
+                if not chunk.choices:
+                    continue
+                piece = chunk.choices[0].delta.content
+                if piece:
+                    yield piece
+        except Exception as e:
+            raise LLMError(f"Falha ao chamar o LLM ({self.provider}/{self.model}): {e}") from e
+
+    def describe(self) -> str:
+        return f"{self.provider} · {self.model}"
