@@ -1,22 +1,15 @@
 {
   "numero_edital": null,
   "orgao": null,
-  "titulo": "EditalAI - Guia Técnico do Projeto (TEIA, 1ª Unidade)",
-  "objeto": "Aplicação web (Streamlit) que recebe editais em PDF e oferece extração estruturada para JSON validado e chat com RAG sobre o conteúdo do edital (p. 4)",
+  "titulo": null,
+  "objeto": null,
   "publico_alvo": null,
   "vagas": null,
   "valor_beneficio": null,
   "cronograma": [],
-  "requisitos": [
-    "Trabalho em equipe (p. 1)",
-    "Comunicação clara (p. 1)",
-    "Adaptabilidade a novas tecnologias (p. 1)",
-    "Metodologias ágeis (p. 1)",
-    "Resolução de problemas (p. 1)",
-    "Inglês nível técnico para leitura de documentação (p. 1)"
-  ],
+  "requisitos": [],
   "documentos_exigidos": [],
   "criterios_selecao": [],
   "como_se_inscrever": null,
-  "recursos_e_contato": "Erick Bruno - Estudante ADS IFPE | (81) 98423-5850 | erickbrunocr@gmail.com | github.com/Euerickbruno (p. 1)"
+  "recursos_e_contato": null
 }

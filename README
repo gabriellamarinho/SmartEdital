@@ -5,7 +5,55 @@ O **SmartEdital** é uma aplicação web desenvolvida para auxiliar estudantes, 
 
 ##  Como Executar o Projeto 
 
-1. Clone o repositório:
-```bash
+
+Clone o repositório:
+
 git clone 
-cd edital-ai
+cd SmartEdital
+
+
+Crie e ative o ambiente virtual (venv):
+
+Windows (PowerShell):
+
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+
+
+Windows (CMD):
+
+python -m venv .venv
+.venv\Scripts\activate.bat
+
+
+Linux / macOS:
+
+python3 -m venv .venv
+source .venv/bin/activate
+
+
+Instale as dependências:
+
+pip install -r requirements.txt
+
+
+Configure o arquivo de variáveis de ambiente (.env):
+
+Copie o arquivo de exemplo:
+
+# Windows (CMD / PowerShell)
+copy .env.example .env
+
+# Linux / macOS
+cp .env.example .env
+
+
+Abra o arquivo .env gerado e adicione a sua chave da NVIDIA:
+
+NVIDIA_API_KEY=sua_chave_da_nvidia_aqui
+
+
+Inicie a aplicação Streamlit:
+
+streamlit run app/main.py
+

@@ -1,15 +1,73 @@
 {
-  "numero_edital": null,
-  "orgao": null,
-  "titulo": null,
-  "objeto": null,
-  "publico_alvo": null,
+  "numero_edital": "Edital Ingresso 2026.1 IFPE",
+  "orgao": "Instituto Federal de Educação, Ciência e Tecnologia de Pernambuco (IFPE)",
+  "titulo": "Processo Seletivo de Ingresso 2026.1",
+  "objeto": "Seleção para cursos técnicos integrados, subsequentes e de graduação do IFPE para o semestre 2026.1, com seleção por prova e por análise de desempenho.",
+  "publico_alvo": "Candidatos que concluíram ou estão concluindo o ensino fundamental (para técnicos integrados) ou ensino médio (para técnicos subsequentes e graduação), conforme modalidade de seleção.",
   "vagas": null,
   "valor_beneficio": null,
-  "cronograma": [],
-  "requisitos": [],
-  "documentos_exigidos": [],
-  "criterios_selecao": [],
-  "como_se_inscrever": null,
-  "recursos_e_contato": null
+  "cronograma": [
+    {
+      "etapa": "Período de inscrições",
+      "data": "6 a 27 de outubro de 2025"
+    },
+    {
+      "etapa": "Publicação da Lista de documentos apresentados",
+      "data": "24/10/2025"
+    },
+    {
+      "etapa": "Aplicação da Prova (seleção por prova)",
+      "data": "07/12/2025"
+    },
+    {
+      "etapa": "Divulgação do gabarito preliminar",
+      "data": "07/12/2025"
+    },
+    {
+      "etapa": "Interposição de recurso referente a gabarito preliminar e/ou questões das provas",
+      "data": "08/12/2025 (Das 0h até as 23h59)"
+    },
+    {
+      "etapa": "Divulgação do gabarito definitivo e Resultado dos recursos",
+      "data": "15/12/2025"
+    },
+    {
+      "etapa": "Divulgação do resultado preliminar das provas objetivas e dissertativa",
+      "data": "22/12/2025"
+    },
+    {
+      "etapa": "Interposição de recurso referente ao resultado preliminar das provas objetivas e/ou dissertativas",
+      "data": "23/12/2025 (Das 0h até as 23h59)"
+    },
+    {
+      "etapa": "Divulgação do resultado final das provas objetivas e dissertativas",
+      "data": "29/12/2025"
+    }
+  ],
+  "requisitos": [
+    "Ter concluído ou estar concluindo o ensino fundamental para cursos técnicos integrados (p. 18)",
+    "Ter concluído ou estar concluindo o ensino médio para cursos técnicos subsequentes e graduação (p. 22)",
+    "Para cotistas de renda: renda familiar per capita de até 1 salário mínimo (p. 8)",
+    "Para cotistas raciais (pretos, pardos, indígenas, quilombolas): autodeclaração e verificação fenotípica/documental (p. 8-9)",
+    "Para pessoas com deficiência: laudo médico com CID (p. 9)",
+    "Não fornecer documentos de pais ou responsáveis no ato da inscrição (p. 6)"
+  ],
+  "documentos_exigidos": [
+    "CPF e documento oficial de identificação com foto (RG, passaporte, CNH, carteira de trabalho, documentos digitais, etc.) (p. 6)",
+    "Para análise de desempenho (técnicos integrados): histórico escolar do ensino fundamental, certificado de conclusão do ensino fundamental (ficha 18) ou certificado do Encceja (p. 18)",
+    "Para análise de desempenho (técnicos subsequentes e graduação): certificado de conclusão do ensino médio (regular, Enem ou Encceja) ou boletim do Enem (2020-2024) (p. 20, 22)",
+    "Para cotistas raciais: anexos de autodeclaração e reconhecimento de identidade indígena/quilombola (p. 28)",
+    "Para pessoas com deficiência: laudo médico com tipo, grau/nível da deficiência e código CID (p. 9)",
+    "Autorização de uso de imagem e áudio para envio de vídeos na verificação de cotas (p. 13)"
+  ],
+  "criterios_selecao": [
+    "Seleção por prova objetiva e dissertativa para técnicos integrados (exceto Barreiros, Belo Jardim e Vitória de Santo Antão) e graduação (p. 3)",
+    "Seleção por análise de desempenho (média de notas de Português e Matemática) para técnicos subsequentes e técnicos integrados dos campi Barreiros, Belo Jardim e Vitória de Santo Antão (p. 3, 22)",
+    "Sistema de cotas: 60% para egressos de escola pública/campo, com subcotistas de renda (50% até 1 salário mínimo per capita) e raciais/PCd (p. 8)",
+    "Reserva de 25% das vagas da ampla concorrência em cursos agrícolas para estudantes de escolas públicas do campo (p. 9)",
+    "Verificação de autodeclaração racial por comissão (fenotípica para pretos/pardos; documental para indígenas/quilombolas) (p. 13)",
+    "Nota zero para documentação não entregue ou incorreta, com possibilidade de correção no prazo (p. 23)"
+  ],
+  "como_se_inscrever": "Inscrições apenas pelo site portal.ifpe.edu.br, na Área do Candidato, informando CPF e documento de identificação. Pagamento da taxa via PIX ou cartão de crédito na Área do Candidato. Confirmar inscrição em até 3 dias úteis após pagamento (p. 6)",
+  "recursos_e_contato": "Recursos interpostos pela Área do Candidato no portal.ifpe.edu.br, dentro dos prazos do cronograma. Não são aceitos recursos sem justificativa, fora do prazo ou por outros meios (p. 23). Dúvidas: acompanhar publicações oficiais no portal.ifpe.edu.br (p. 24)"
 }
