@@ -1,0 +1,15 @@
+{
+  "numero_edital": null,
+  "orgao": null,
+  "titulo": "EditalAI - Guia Técnico do Projeto (TEIA, 1ª Unidade)",
+  "objeto": "Extrator estruturado e assistente de editais com RAG + LLM. Guia técnico completo do que foi construído: arquitetura, módulo a módulo, conceitos da unidade, decisões de projeto, testes, execução, roteiro de apresentação e perguntas prováveis.",
+  "publico_alvo": null,
+  "vagas": null,
+  "valor_beneficio": null,
+  "cronograma": [],
+  "requisitos": [],
+  "documentos_exigidos": [],
+  "criterios_selecao": [],
+  "como_se_inscrever": null,
+  "recursos_e_contato": null
+}

@@ -1,11 +1,73 @@
-# SmartEdital - Extrator e Analisador de Editais
 
-O **SmartEdital** é uma aplicação web desenvolvida para auxiliar estudantes, candidatos e empresas na leitura, interpretação e extração técnica de requisitos contidos em editais e licitações públicas, utilizando modelos de linguagem (LLM) e busca semântica (RAG).
+# SMART EDITAL 
+
+projeto voltado a disciplina de TOPICOS EM iNTELIGENCIA ARTIFICIAL abrangendo conceitos ensinados de tokkeninzação , embeddings, funcionamento do Transformer, engenharia de prompt e RAG. 
+O projeto foi desenvolvido utilizando a interface web do Streamlit, que permite fazer o upload de documentos em PDF, navegar por abas, visualizar dados em tabelas, baixar arquivos e interagir por um chat com respostas em streaming.
+
+A leitura dos arquivos PDF é realizada via PyPDFLoader do LangChain, onde o texto é extraído e dividido em trechos utilizando o RecursiveCharacterTextSplitter. Após essa divisão em chunks, inicia-se a vetorização pelo método de embeddings. Para o processamento de respostas e extração de dados, utiliza-se a API da NVIDIA (modelo LLM nvidia/nemotron-3-ultra-550b-a55b), com comunicação realizada através do SDK da OpenAI.
+
+A vetorização dos chunks e das perguntas feitas pelo usuário é realizada pelo modelo intfloat/multilingual-e5-small via sentence-transformers. Os vetores resultantes são armazenados e consultados semanticamente por distância de cosseno no banco vetorial persistente ChromaDB.
+
+O sistema utiliza o Pydantic v2 para garantir a validação rigorosa dos esquemas JSON extraídos e o pytest para a realização de testes unitários locais sem dependência de rede.
+
+### Como Executar o Projeto:
+
+1. Clone o repositório
+````
+git clone https://github.com/gabriellamarinho/SmartEdital.git
+
+cd SmartEdital
+````
 
 
-##  Como Executar o Projeto 
+2. Crie e ative o Ambiente Virtual (venv)
 
-1. Clone o repositório:
-```bash
-git clone 
-cd edital-ai
+Windows (PowerShell):
+
+````
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+````
+
+Windows (CMD):
+````
+python -m venv .venv
+.venv\Scripts\activate.bat
+````
+
+Linux / macOS:
+
+````
+python3 -m venv .venv
+source .venv/bin/activate
+````
+
+3. Instale as dependências
+````
+pip install -r requirement.txt
+````
+
+4. Configure as Variáveis de Ambiente (.env):  
+
+    Copie o arquivo de exemplo para criar a sua configuração local:
+   
+    Windows (PowerShell / CMD)
+
+ ````
+copy .env.example .env
+````
+
+Linux / macOS
+````
+cp .env.example .env
+````
+
+Abra o arquivo .env gerado e insira sua chave de API da NVIDIA:
+````
+NVIDIA_API_KEY=sua_chave_da_nvidia_aqui
+````
+
+5. Inicie a aplicação Streamlit
+````
+streamlit run app/main.py
+````
