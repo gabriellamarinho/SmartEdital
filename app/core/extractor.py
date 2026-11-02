@@ -50,6 +50,7 @@ class Edital(BaseModel):
     como_se_inscrever: Optional[str] = None
     recursos_e_contato: Optional[str] = None
 
+    # LLMs às vezes devolvem número, lista ou "null" como texto: normalizamos.
     @field_validator(*_TEXT_FIELDS, mode="before")
     @classmethod
     def _norm_text(cls, v):
@@ -80,7 +81,7 @@ class Edital(BaseModel):
 @dataclass
 class ExtractionResult:
     edital: Edital
-    pages: List[int]  
+    pages: List[int]  # páginas que serviram de contexto
     n_chunks: int
 
 
@@ -121,6 +122,7 @@ def save_extraction(doc_id: str, ed: Edital) -> None:
     extraction_path(doc_id).write_text(ed.model_dump_json(indent=2), encoding="utf-8")
 
 
+# --------------------------------------------------------------------------- #
 class EditalExtractor:
     def __init__(self, rag, llm):
         self.rag, self.llm = rag, llm
@@ -138,7 +140,7 @@ class EditalExtractor:
         raw = self.llm.complete(messages, temperature=0.0, max_tokens=4096)
 
         edital = None
-        for attempt in range(2):  
+        for attempt in range(2):  # 1 tentativa + 1 reparo
             try:
                 edital = Edital.model_validate(parse_json_response(raw))
                 break

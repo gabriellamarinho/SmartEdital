@@ -19,14 +19,23 @@ class Settings:
     CHROMA_DIR: str = str(BASE_DIR / os.getenv("CHROMA_DIR", "data/chroma"))
     EXTRACTION_DIR: str = str(BASE_DIR / os.getenv("EXTRACTION_DIR", "data/extractions"))
 
-    # ---------- LLM (NVIDIA) ----------
+    # ---------- LLM ----------NVIDIA 
     LLM_PROVIDER: str = os.getenv("LLM_PROVIDER", "nvidia").lower()
 
-    NVIDIA_API_KEY: str = os.getenv("NVIDIA_API_KEY", "")
+    NVIDIA_API_KEY: str = os.getenv("NVIDIA_API_KEY", "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")
     NVIDIA_BASE_URL: str = os.getenv("NVIDIA_BASE_URL", "https://integrate.api.nvidia.com/v1")
     NVIDIA_MODEL: str = os.getenv("NVIDIA_MODEL", "nvidia/nemotron-3-ultra-550b-a55b")
 
     LLM_ENABLE_THINKING: bool = _bool("LLM_ENABLE_THINKING", False)
+
+    HF_TOKEN: str = os.getenv("HF_TOKEN", "")
+    HF_BASE_URL: str = os.getenv("HF_BASE_URL", "https://router.huggingface.co/v1")
+    HF_MODEL: str = os.getenv("HF_MODEL", "meta-llama/Llama-3.1-8B-Instruct")
+
+    # Ollama expõe uma API compatível com OpenAI em /v1
+    OLLAMA_BASE_URL: str = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
+    OLLAMA_MODEL: str = os.getenv("OLLAMA_MODEL", "llama3.1")
+
     LLM_TIMEOUT: float = float(os.getenv("LLM_TIMEOUT", "120"))
 
     # ---------- RAG ----------

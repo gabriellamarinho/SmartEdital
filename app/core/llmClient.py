@@ -1,3 +1,4 @@
+
 import re
 from typing import Dict, Iterator, List
 
@@ -11,7 +12,8 @@ _THINK_RE = re.compile(r"<think>.*?</think>", flags=re.DOTALL)
 
 
 class LLMError(RuntimeError):
-#error
+    """Erro amigável para mostrar ao usuário na interface."""
+
 
 class LLMClient:
     def __init__(self):
@@ -36,6 +38,7 @@ class LLMClient:
 
         self.client = OpenAI(base_url=base_url, api_key=api_key, timeout=settings.LLM_TIMEOUT)
 
+    # ------------------------------------------------------------------ #
     def _kwargs(self, messages: List[Message], temperature: float, max_tokens: int, stream: bool) -> dict:
         kw = dict(
             model=self.model,
@@ -52,11 +55,12 @@ class LLMClient:
     def _clean(text: str) -> str:
         return _THINK_RE.sub("", text or "").strip()
 
+    # ------------------------------------------------------------------ #
     def complete(self, messages: List[Message], temperature: float = 0.1, max_tokens: int = 4096) -> str:
         """Resposta completa (usada na extração estruturada)."""
         try:
             resp = self.client.chat.completions.create(**self._kwargs(messages, temperature, max_tokens, False))
-        except Exception as e:  # rede, chave inválida, rate limit
+        except Exception as e:  # rede, chave inválida, rate limit...
             raise LLMError(f"Falha ao chamar o LLM ({self.provider}/{self.model}): {e}") from e
         return self._clean(resp.choices[0].message.content)
 
