@@ -45,11 +45,11 @@
     },
     {
       "etapa": "Publicação da Lista Preliminar da análise de desempenho",
-      "data": "Data não especificada no trecho"
+      "data": "Não informada no trecho"
     }
   ],
   "requisitos": [
-    "Ter CPF e documento oficial de identificação com foto (RG, passaporte, CNH, carteira de trabalho, documentos digitais, carteira de Registro Nacional Migratório) (p. 6)",
+    "Ter CPF e documento oficial com foto (RG, passaporte, CNH, carteira de trabalho, documentos digitais, carteira de Registro Nacional Migratório) (p. 6)",
     "Para cotistas de renda: renda familiar per capita de até 1 salário mínimo (p. 8)",
     "Para cotistas raciais (pretas, pardas, indígenas, quilombolas): passar por verificação de autodeclaração conforme item 5 do edital (p. 8)",
     "Para pessoas com deficiência: apresentar laudo médico com tipo, grau ou nível da deficiência e código CID (p. 9)",
@@ -57,28 +57,20 @@
     "Entregar documentação comprobatória de notas conforme modalidade de ensino (p. 22)"
   ],
   "documentos_exigidos": [
-    "CPF e documento oficial de identificação com foto (p. 6)",
+    "CPF e documento oficial com foto (p. 6)",
     "Histórico escolar do ensino fundamental ou documento equivalente; ou Certificado de conclusão do ensino fundamental (ficha 18); ou Certificado do Encceja (para técnicos integrados) (p. 18)",
-    "Certificado de conclusão do ensino médio (para técnicos subsequentes e graduação) (p. 20)",
-    "Certificado de conclusão do ensino médio obtido através do Enem com: nome completo, edição do Enem, CPF, pontuações, identificação da instituição certificadora, assinatura da autoridade certificadora (p. 20)",
-    "Certificado de conclusão do ensino fundamental ou médio obtido através do Encceja com: nome completo, edição(ões) do Encceja, CPF, pontuações, identificação da instituição certificadora, assinatura da autoridade certificadora (p. 20)",
-    "Documentos para verificação de autodeclaração de cotistas raciais conforme anexos C, D, E (p. 28)",
+    "Certificado de conclusão do ensino médio (Enem ou Encceja) contendo: nome completo, edição do exame, CPF, pontuações, instituição certificadora, assinatura da autoridade certificadora (p. 20)",
+    "Documentos para verificação de autodeclaração racial (Anexos C, D, E) (p. 28)",
     "Laudo médico com CID para pessoas com deficiência (p. 9)",
-    "Documentação para solicitação de isenção da taxa de inscrição conforme Anexo F (p. 28)"
+    "Documentação para solicitação de isenção da taxa (Anexo F) (p. 28)",
+    "Requerimento para tratamento por nome social (Anexo G) se aplicável (p. 28)"
   ],
   "criterios_selecao": [
-    "Para cursos com seleção por prova (técnicos integrados e graduação): prova objetiva e dissertativa (p. 3)",
-    "Para cursos com seleção por análise de desempenho (técnicos subsequentes e técnicos integrados dos campi Barreiros, Belo Jardim e Vitória de Santo Antão): análise de notas de Língua Portuguesa e Matemática (p. 3)",
-    "Ensino médio regular (3 anos): média das notas de Língua Portuguesa e Matemática dos 1º e 2º anos (p. 22)",
-    "Certificado do Encceja: nota de Linguagens, Códigos e suas Tecnologias e de Matemática e suas Tecnologias (p. 22)",
-    "Certificado do Enem: mesmas regras do Encceja (p. 22)",
-    "Boletim do Enem (2020-2024): pontuação de Linguagens e Matemática (p. 22)",
-    "Ensino médio com duração diferente de 3 anos: média anual ou semestral sem considerar o último ano/semestre (p. 22)",
-    "Ensino médio não seriado (supletivo): média única de Português e Matemática (p. 22)",
-    "EJA: média dos módulos/fases concluídos (p. 22)",
-    "Sistema de cotas: 60% para estudantes de escola pública/campo, com subcotas por renda (50% até 1 salário mínimo per capita) e raciais/deficiência baseadas no IBGE (p. 8)",
+    "Para cursos com seleção por prova: prova objetiva e dissertativa (p. 3, 27)",
+    "Para cursos com seleção por análise de desempenho: média das notas de Língua Portuguesa e Matemática do 1º e 2º anos do ensino médio regular; ou notas do Encceja/Enem nas áreas de Linguagens e Matemática; ou regras específicas para outras modalidades de ensino médio (p. 22)",
+    "Sistema de cotas: 60% das vagas para quem estudou todo o ensino fundamental/médio em escola pública ou do campo; dentro dessas, 50% para renda familiar per capita até 1 salário mínimo; percentuais raciais baseados no IBGE: 66,49% (pretas/pardas/indígenas), 0,87% (quilombolas), 8,90% (pessoas com deficiência) (p. 8)",
     "Reserva de 25% das vagas da ampla concorrência dos cursos agrícolas para estudantes de escolas públicas do campo (p. 9)"
   ],
-  "como_se_inscrever": "Pelo site portal.ifpe.edu.br, na Área do Candidato, informando CPF e documento de identificação. Pagamento via PIX ou cartão de crédito apenas pela Área do Candidato. Após pagamento, acessar Área do Candidato em até 3 dias úteis para confirmar inscrição (p. 6)",
-  "recursos_e_contato": "Recursos contra gabarito preliminar: 08/12/2025 na Área do Candidato. Recursos contra resultado preliminar das provas: 23/12/2025 na Área do Candidato. Recursos contra Lista Preliminar de Análise de Desempenho: dentro do prazo do cronograma, pela Área do Candidato. Não são aceitos recursos sem justificativa, fora do prazo ou por outros meios (p. 23, 27). Dúvidas: acompanhar publicações oficiais no portal.ifpe.edu.br (p. 24)"
+  "como_se_inscrever": "Pelo site portal.ifpe.edu.br, na Área do Candidato, informando CPF e documento de identificação; pagamento da taxa via PIX ou cartão de crédito na Área do Candidato; confirmação da inscrição em até 3 dias úteis após pagamento (p. 6)",
+  "recursos_e_contato": "Recursos contra gabarito preliminar: 08/12/2025 na Área do Candidato; recursos contra resultado preliminar das provas: 23/12/2025 na Área do Candidato; recursos contra Lista Preliminar de Análise de Desempenho: prazo conforme cronograma, pela Área do Candidato; não são aceitos recursos sem justificativa, fora do prazo ou por outros meios (p. 23, 27); dúvidas: acompanhar publicações oficiais no portal.ifpe.edu.br (p. 24)"
 }
