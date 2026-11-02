@@ -26,9 +26,6 @@ from app.prompt.systemPrompts import (
 st.set_page_config(page_title=settings.PROJECT_NAME, layout="wide")
 
 
-# --------------------------------------------------------------------------- #
-# Recursos pesados em cache (carregados uma vez por processo)
-# --------------------------------------------------------------------------- #
 @st.cache_resource(show_spinner="Carregando modelo de embeddings...")
 def get_rag() -> RAGEngine:
     return RAGEngine()

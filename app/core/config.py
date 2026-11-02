@@ -32,7 +32,6 @@ class Settings:
     HF_BASE_URL: str = os.getenv("HF_BASE_URL", "https://router.huggingface.co/v1")
     HF_MODEL: str = os.getenv("HF_MODEL", "meta-llama/Llama-3.1-8B-Instruct")
 
-    # Ollama expõe uma API compatível com OpenAI em /v1
     OLLAMA_BASE_URL: str = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
     OLLAMA_MODEL: str = os.getenv("OLLAMA_MODEL", "llama3.1")
 
