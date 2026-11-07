@@ -22,7 +22,7 @@ class Settings:
     # ---------- LLM ----------NVIDIA 
     LLM_PROVIDER: str = os.getenv("LLM_PROVIDER", "nvidia").lower()
 
-    NVIDIA_API_KEY: str = os.getenv("NVIDIA_API_KEY", "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")
+    NVIDIA_API_KEY: str = os.getenv("NVIDIA_API_KEY", "")
     NVIDIA_BASE_URL: str = os.getenv("NVIDIA_BASE_URL", "https://integrate.api.nvidia.com/v1")
     NVIDIA_MODEL: str = os.getenv("NVIDIA_MODEL", "nvidia/nemotron-3-ultra-550b-a55b")
 
