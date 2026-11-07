@@ -10,6 +10,28 @@ A vetorização dos chunks e das perguntas feitas pelo usuário é realizada pel
 
 O sistema utiliza o Pydantic v2 para garantir a validação rigorosa dos esquemas JSON extraídos e o pytest para a realização de testes unitários locais sem dependência de rede.
 
+
+### Problema
+
+Editais de processo seletivo, assistência estudantil, concursos e licitações reúnem muita informação de forma densa: são longos e cheios de requisitos, prazos e anexos. Perder uma data ou um documento exigido pode custar a vaga ou o benefício.
+
+O SMART Edital permite que a pessoa envie o PDF e:
+
+* possa ver um resumo estruturado mostrando vagas, valores, cronograma, requisitos, documentos, critérios de seleção e como se inscrever;
+* realize perguntas sobre o edital;
+
+### Tecnologias
+* Interface web - Streamlit (upload, abas, tabelas, download, chat com streaming)
+* Leitura de PDF - LangChain PyPDFLoader + pypdf
+* Chunking - LangChain RecursiveCharacterTextSplitter
+* Embeddings - intfloat/multilingual-e5-small (sentence-transformers / Hugging Face)
+* Banco vetorial - ChromaDB (persistente, distância de cosseno)
+* LLM - API da NVIDIA (nvidia/nemotron-3-ultra-550b-a55b) pelo SDK da OpenAI
+
+* Validação de saída - Pydantic v2 (esquema Edital com normalização de campos)
+* Dados e tabelas - pandas
+* Configuração - python-dotenv (chaves só no .env, que está no .gitignore)
+
 ### Como Executar o Projeto:
 
 1. Clone o repositório
